@@ -1,0 +1,10 @@
+.layout {
+    display: flex;
+    flex-direction: column;
+    // overflow-x: hidden;
+}
+
+main {
+    flex-grow: 1;
+    width: 100%;
+}

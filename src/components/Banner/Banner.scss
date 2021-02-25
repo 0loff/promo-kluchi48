@@ -1,0 +1,97 @@
+.banner {
+    position: relative;
+    height: 739px;
+    background: url('../../img/banner.png') no-repeat center;
+    background-size: cover;
+    overflow: hidden;   
+    @media screen and (max-width: 420px) {
+        height: 275px;
+        background-position: right;
+    }
+    @media screen and (min-width: 421px) and (max-width: 676px) {
+        height: 510px;
+    }
+    @media screen and (min-width: 677px) and (max-width: 920px) {
+        height: 570px;
+    }
+    &__content {
+        position: relative;
+        width: 100%;
+        max-width: 745px;
+        padding-top: 150px;
+        &:before {
+            position: absolute;
+            content: '';
+            top: 0;
+            left: -1000px;
+            right: 0;
+            bottom: -170px;
+            background: linear-gradient(0deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.1));
+            backdrop-filter: blur(10px);
+            transform: matrix(-1, 0, 0, 1, 0, 0);
+            @media screen and (max-width: 420px) {
+                right: -30px;
+                bottom: -20px;
+                top: 57px;
+
+            }
+        }       
+        & > * {
+            position: relative;
+        }   
+        @media screen and (max-width: 676px) {
+            padding-top: 77px;
+            max-width: 257px;
+        }
+        @media screen and (min-width: 421px) and (max-width: 676px) {
+            max-width: 350px;
+        }
+        @media screen and (min-width: 677px) and (max-width: 920px) {
+            padding-top: 90px;
+        }
+        
+    }
+    &__title {
+        max-width: 690px;
+        margin-top: 0;
+        font-size: 55px;
+        @media screen and (max-width: 420px) {
+              font-size: 18px;
+              line-height: 27px;
+        }
+        @media screen and (min-width: 421px) and (max-width: 676px) {
+              font-size: 30px;
+              line-height: 40px;
+        }
+        @media screen and (min-width: 677px) and (max-width: 920px) {
+              font-size: 45px;
+              line-height: 60px;
+        }
+    }
+    &__subTitle {
+        font-weight: 400;
+        font-size: 36px;
+        line-height: 49px;
+        @media screen and (max-width: 420px) {
+            font-size: 12px;
+            line-height: 16px;
+        }
+        @media screen and (min-width: 421px) and (max-width: 676px) {
+            font-size: 22px;
+            line-height: 30px;
+        }
+        @media screen and (min-width: 677px) and (max-width: 920px) {
+            font-size: 35px;
+            line-height: 45px;
+        }
+    }
+    &__buttons {
+        display: flex;
+        a {
+            margin-right: 10px;
+            @media screen and (min-width: 420px) {
+                display: none;
+            }
+        }
+    }
+}

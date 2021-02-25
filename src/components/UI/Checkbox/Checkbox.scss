@@ -1,0 +1,39 @@
+.checkbox {
+    box-sizing: border-box;
+    position: relative;
+    margin-bottom: 25px;
+
+    -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none;   /* Chrome/Safari/Opera */
+    -khtml-user-select: none;    /* Konqueror */
+    -moz-user-select: none;      /* Firefox */
+    -ms-user-select: none;       /* Internet Explorer/Edge */
+    user-select: none; 
+    &__input {
+        position: absolute;
+        right: 0;
+        opacity: 0;
+        z-index: -10;
+    }
+    &__label {
+        padding-left: 28px;
+        cursor: pointer;
+        &:before {
+            box-sizing: border-box;
+            position: absolute;
+            content: '';
+            width: 18px;
+            height: 18px;
+            left: 0;
+            top: 2px;
+            border: solid 2px #efcf46;
+
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: 85%;
+        }
+    }
+}
+input[type=checkbox]:checked + .checkbox__label:before {
+    background-image: url('../../../img/cross.svg');
+}

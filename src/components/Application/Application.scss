@@ -1,0 +1,48 @@
+.application {
+    padding-top: 60px;
+    padding-bottom: 84px;
+    background-color: #EFCF46;
+    @media screen and (max-width: 420px) {
+        padding-top: 30px;
+        padding-bottom: 20px;
+    }
+    &__content {
+        text-align: center;
+    }
+    &__title {
+        font-family: 'Oswald', sans-serif;
+        font-size: 64px;
+        font-weight: bold;
+        color: #3c3f55;
+        @media screen and (max-width: 420px) {
+            font-size: 16px;
+        }
+        @media screen and (min-width: 421px) and (max-width: 676px) {
+            font-size: 20px;
+        }
+        @media screen and (min-width: 677px) and (max-width: 920px) {
+            font-size: 35px;
+        }
+    }
+    &__buttons { 
+        display: flex;
+        a {
+            margin-right: 10px;
+            @media screen and (min-width: 420px) {
+                display: none;
+            }
+        }
+    }
+    h2 {
+        color: #3c3f55;
+        @media screen and (max-width: 420px) {
+            font-size: 14px;
+        }
+        @media screen and (min-width: 421px) and (max-width: 676px) {
+            font-size: 16px;
+        }
+        @media screen and (min-width: 677px) and (max-width: 920px) {
+            font-size: 20px;
+        }
+    }
+}

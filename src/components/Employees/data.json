@@ -1,0 +1,26 @@
+[
+    {
+        "name": "Алексей Иванов",
+        "img": "aivanov" 
+    },
+    {
+        "name": "Роман Давыдов",
+        "img": "rdavydov" 
+    },
+    {
+        "name": "Александра Казантипова",
+        "img": "akazantipova" 
+    },
+    {
+        "name": "Дмитрий Мизгирев",
+        "img": "aivanov" 
+    },
+    {
+        "name": "Диана Валошина",
+        "img": "akazantipova" 
+    },
+    {
+        "name": "Денис Петров",
+        "img": "rdavydov" 
+    }
+]

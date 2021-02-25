@@ -1,0 +1,52 @@
+button {
+    font-size: 24px;
+    border: none;
+    cursor: pointer;
+}
+
+.LinkAsButton,
+.Button {
+    width: 100%;
+    text-align: center;
+    display: block;
+    padding: 20px 30px;
+    background-color: rgba(239,207,70,1);
+    border-radius: 10px;
+    border: solid 2px transparent;
+    transition: 0.3s;
+    cursor: pointer;
+    @media screen and (max-width: 420px) {
+        padding: 10px 30px;
+    }
+    @media screen and (max-width: 420px) {
+        font-size: 12px;
+        padding: 3px 10px;
+        border-radius: 5px;
+    }
+    &:hover {
+        color: #fff;
+        background-color: rgba(61,63,85,1);
+        -webkit-box-shadow: 0px 0px 8px 0px rgba(34, 60, 80, 0.2);
+        -moz-box-shadow: 0px 0px 8px 0px rgba(34, 60, 80, 0.2);
+        box-shadow: 0px 0px 8px 0px rgba(34, 60, 80, 0.2);
+    }
+    &:disabled {
+        background-color: #fff;
+        color: #B3B3B3;
+        border: solid 2px #B3B3B3;
+        cursor: default;
+    }
+    &_long {
+        max-width: 320px;
+    }
+    &_short {
+        max-width: 222px;
+        @media screen and (max-width: 420px) {
+            max-width: auto;
+        }
+    }
+    &_white {
+        background-color: #fff;
+        margin: 0 auto;
+    }
+}

@@ -1,0 +1,75 @@
+.footer {
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 1383px;
+    margin: 0 auto;
+    padding: 40px 15px 60px;
+    @media screen and (max-width: 1024px) {
+        flex-wrap: wrap;
+        padding-bottom: 40px;
+    }
+    &__logo {
+        @media screen and (max-width: 1024px) {
+            margin-bottom: 20px;
+            width: 100%;
+        }
+    }
+    @media screen and (max-width: 536px) {
+        font-size: 14px ;
+    }
+}
+
+.footerInfo {
+    &__item {
+        margin-bottom: 20px;
+        @media screen and (max-width: 1024px) {
+            margin-bottom: 10px;
+        }
+    }
+    @media screen and (max-width: 1024px) {
+        order: 2;
+    }
+}
+
+.footerContacts {
+    &__item {
+        position: relative;
+        margin-bottom: 20px;
+        padding-left: 55px;
+        &:before {
+            position: absolute;
+            content: '';
+            left: 0;
+            top: -3px;
+            width: 25px;
+            height: 25px;
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: contain;
+            @media screen and (max-width: 536px) {
+                width: 18px;
+                height: 18px;
+                top: 0;
+            }
+        }
+        @media screen and (max-width: 1024px) {
+            margin-bottom: 10px;
+        }
+        @media screen and (max-width: 676px) {
+            padding-left: 35px;
+        }
+        @each $contact in footerPhone,
+        footerLocation {
+            &.#{$contact} {
+                &:before {
+                    background-image: url('../../img/#{$contact}.svg');
+                }
+            }
+        }
+    }
+    @media screen and (max-width: 1024px) {
+        order: 1;
+    }
+}
