@@ -16,9 +16,6 @@ button {
     transition: 0.3s;
     cursor: pointer;
     @media screen and (max-width: 420px) {
-        padding: 10px 30px;
-    }
-    @media screen and (max-width: 420px) {
         font-size: 12px;
         padding: 3px 10px;
         border-radius: 5px;
@@ -38,6 +35,9 @@ button {
     }
     &_long {
         max-width: 320px;
+        @media screen and (max-width: 420px) {
+            max-width: 230px;
+        }
     }
     &_short {
         max-width: 222px;
