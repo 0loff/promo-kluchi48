@@ -63,6 +63,7 @@ const Navigation = props => {
                                     smooth={ true }
                                     offset={ item.scrollSettings.offsetPosition }
                                     duration={ item.scrollSettings.animateTime }
+                                    onClick={ props.mobileMenuHandler }
                                 >
                                     { item.linkTitle }
                                 </Link>
@@ -74,7 +75,12 @@ const Navigation = props => {
 
 
         <div className="header__menuToggler">
-            <input type="checkbox" id="checkbox4" className="checkbox4 visuallyHidden" />
+            <input 
+                type="checkbox" 
+                id="checkbox4" 
+                className="checkbox4 visuallyHidden" 
+                checked={ props.isCross }   
+            />
             <label 
                 htmlFor="checkbox4" 
                 onClick={ props.mobileMenuHandler }
