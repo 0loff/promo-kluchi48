@@ -57,7 +57,7 @@ class ContactForm extends Component {
 
         axios({
             method: "POST",
-            url: "http://mailsender.loc:8080/",
+            url: "http://mailsender.promo-kluchi48.ru/",
             data: this.state.valuesForSend
         }).then((response) => {
             if (response.data.status === 'success') {
