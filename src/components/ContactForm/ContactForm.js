@@ -33,7 +33,10 @@ class ContactForm extends Component {
                 }
             },
             agreement: false,
-            isButtonDisabled: true
+            isButtonDisabled: true,
+            isMessageSended: false,
+            messageStatus: '',
+            messageAnswer: ''
         }
     }
 
@@ -61,10 +64,17 @@ class ContactForm extends Component {
             data: this.state.valuesForSend
         }).then((response) => {
             if (response.data.status === 'success') {
-                alert('Message Sent.')
-                this.resetForm()
+                this.setState({ 
+                    isMessageSended: true, 
+                    messageStatus: 'Заявка принята!',
+                    messageAnswer: 'Наш риэлтор свяжется с вами в ближайшее время. Пожалуйста, ожидайте звонка.'
+                })
             } else if (response.data.status === 'fail') {
-                alert('Message faild  to send.')
+                this.setState({ 
+                    isMessageSended: true, 
+                    messageStatus: 'Возникла ошибка!',
+                    messageAnswer: 'Что-то пошло не так и данные не были отправлены. Пожалуйста свяжитесь с нами по контактному номеру, указанному на сайте.'
+                })
             }
         })
     }
@@ -88,22 +98,41 @@ class ContactForm extends Component {
         })
     }
     
-    render() {      
+    render() {
 
         let cls = [
             classes.contactForm__wrapper,
             classes.contactForm__wrapper_show
         ]
 
+        let formCls = [
+            classes.contactForm__form,
+            classes.contactForm__form_hided
+        ]
+
+        let msgCls = [
+            classes.contactForm__form,
+            classes.contactForm__form_hided
+        ]
+
         this.props.isVisible
             ? cls.push(classes.contactForm__wrapper_show)
             : cls.pop(classes.contactForm__wrapper_show)
 
+
+        if (this.state.isMessageSended) {
+            formCls.push(classes.contactForm__form_hided)
+            msgCls.pop(classes.contactForm__form_hided)
+        } else {
+            formCls.pop(classes.contactForm__form_hided)
+            msgCls.push(classes.contactForm__form_hided)
+        }
+        
         return(
             <div className={ cls.join(' ') }>
                 <form
                     id="contact-form" 
-                    className={ classes.contactForm__form }
+                    className={ formCls.join(' ') }
                     onSubmit={ this.handleSubmit.bind(this)}
                     method="POST"
                 >
@@ -113,16 +142,6 @@ class ContactForm extends Component {
                     ></span>
                     <h2 className={ classes.contactForm__title }>Оставить заявку на продажу</h2>
                     { this.renderInputs() }
-                    {/* <Input
-                        label={ 'Имя' }
-                        placeholder={ 'Введите имя' }
-                        onChangeInput={ this.onUserNameChange }
-                    />
-                    <Input
-                        label={ 'Номер' }
-                        placeholder={ '+7 ( ___ ) ___ __ __' }
-                        onChangeInput={ this.onUserPhoneChange }
-                    /> */}
                     <Checkbox
                         onChangeInput={ this.onAgreementChange }
                     />
@@ -130,6 +149,14 @@ class ContactForm extends Component {
                         Disabled={ this.state.isButtonDisabled }
                     />
                 </form>
+                <div className={ msgCls.join(' ') }>
+                    <span 
+                        className={ classes.form_hide }
+                        onClick={ this.props.hideContactForm }
+                    ></span>
+                    <h2 className={ classes.contactForm__title }>{ this.state.messageStatus}</h2>
+                    <p className={ classes.contactForm__answer }>{ this.state.messageAnswer}</p>
+                </div>
             </div>
         )
     }
