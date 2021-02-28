@@ -31,7 +31,8 @@ const buyingParams = {
             img: ' workflowList__item_money'
         }
     ],
-    actionTrait: 'купить'
+    actionTrait: 'купить',
+    contactFormTitle: 'покупку'
 }
 
 const sellingParams = {
@@ -55,7 +56,8 @@ const sellingParams = {
             img: ' workflowList__item_money'
         }
     ],
-    actionTrait: 'продать'
+    actionTrait: 'продать',
+    contactFormTitle: 'продажу'
 }
 
 class Content extends Component {
@@ -140,6 +142,7 @@ class Content extends Component {
                 <ContactForm
                     isVisible = { this.state.isContactFormVisible}
                     hideContactForm = { this.hideContactForm }
+                    title = { this.state.pageParams.contactFormTitle }
                 />
                 <ScrollToTop
                     isVisible = { this.state.isScrollToTopVisible }

@@ -48,7 +48,6 @@ class ContactForm extends Component {
     onUserPhoneChange = (e) => {
         let valuesForSend = this.state.valuesForSend
         valuesForSend.userPhone = e.target.value
-        console.log(valuesForSend.userPhone);
         this.setState({ valuesForSend })
     }
     onAgreementChange = (e) => {
@@ -140,7 +139,7 @@ class ContactForm extends Component {
                         className={ classes.form_hide }
                         onClick={ this.props.hideContactForm }
                     ></span>
-                    <h2 className={ classes.contactForm__title }>Оставить заявку на продажу</h2>
+                    <h2 className={ classes.contactForm__title }>Оставить заявку на { this.props.title }</h2>
                     { this.renderInputs() }
                     <Checkbox
                         onChangeInput={ this.onAgreementChange }
