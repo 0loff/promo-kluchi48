@@ -32,7 +32,8 @@ const buyingParams = {
         }
     ],
     actionTrait: 'купить',
-    contactFormTitle: 'покупку'
+    contactFormTitle: 'покупку',
+    attaintmentArrayCounts: [28, 32, 29, 27, 33, 29, 34, 28, 33, 31, 26, 24]
 }
 
 const sellingParams = {
@@ -57,7 +58,8 @@ const sellingParams = {
         }
     ],
     actionTrait: 'продать',
-    contactFormTitle: 'продажу'
+    contactFormTitle: 'продажу',
+    attaintmentArrayCounts: [24, 26, 31, 33, 28, 34, 29, 33, 27, 29, 32, 28]
 }
 
 class Content extends Component {
@@ -67,6 +69,7 @@ class Content extends Component {
         this.state = {
             pageParams: {},
             attaintmentMonth: '',
+            attaintmentCount: '',
             isScrollToTopVisible: false,
             isContactFormVisible: false,
             buttonLabelCall: 'Позвонить',
@@ -77,19 +80,58 @@ class Content extends Component {
             : this.state.pageParams = sellingParams
 
         switch (new Date().getMonth() - 1) {
-            case -1:  this.state.attaintmentMonth = 'в декабре';   break;
-            case 0:   this.state.attaintmentMonth = 'в январе';    break;
-            case 1:   this.state.attaintmentMonth = 'в феврале';   break;
-            case 2:   this.state.attaintmentMonth = 'в марте';     break;
-            case 3:   this.state.attaintmentMonth = 'в апреле';    break;
-            case 4:   this.state.attaintmentMonth = 'в мае';       break;
-            case 5:   this.state.attaintmentMonth = 'в июне';      break;
-            case 6:   this.state.attaintmentMonth = 'в июле';      break;
-            case 7:   this.state.attaintmentMonth = 'в августе';   break;
-            case 8:   this.state.attaintmentMonth = 'в сентябре';  break;
-            case 9:   this.state.attaintmentMonth = 'в октябре';   break;
-            case 10:  this.state.attaintmentMonth = 'в ноябре';    break;
-            case 11:  this.state.attaintmentMonth = 'в декабре';   break;
+            case -1:  
+                this.state.attaintmentMonth = 'в декабре';   
+                this.state.attaintmentCount = this.state.pageParams.attaintmentArrayCounts[11];
+                break;
+            case 0:   
+                this.state.attaintmentMonth = 'в январе';    
+                this.state.attaintmentCount = this.state.pageParams.attaintmentArrayCounts[0];
+                break;
+            case 1:   
+                this.state.attaintmentMonth = 'в феврале';   
+                this.state.attaintmentCount = this.state.pageParams.attaintmentArrayCounts[1];
+                break;
+            case 2:   
+                this.state.attaintmentMonth = 'в марте';     
+                this.state.attaintmentCount = this.state.pageParams.attaintmentArrayCounts[2];
+                break;
+            case 3:   
+                this.state.attaintmentMonth = 'в апреле';    
+                this.state.attaintmentCount = this.state.pageParams.attaintmentArrayCounts[3];
+                break;
+            case 4:   
+                this.state.attaintmentMonth = 'в мае';       
+                this.state.attaintmentCount = this.state.pageParams.attaintmentArrayCounts[4];
+                break;
+            case 5:   
+                this.state.attaintmentMonth = 'в июне';      
+                this.state.attaintmentCount = this.state.pageParams.attaintmentArrayCounts[5];
+                break;
+            case 6:   
+                this.state.attaintmentMonth = 'в июле';      
+                this.state.attaintmentCount = this.state.pageParams.attaintmentArrayCounts[6];
+                break;
+            case 7:   
+                this.state.attaintmentMonth = 'в августе';   
+                this.state.attaintmentCount = this.state.pageParams.attaintmentArrayCounts[7];
+                break;
+            case 8:   
+                this.state.attaintmentMonth = 'в сентябре';  
+                this.state.attaintmentCount = this.state.pageParams.attaintmentArrayCounts[8];
+                break;
+            case 9:   
+                this.state.attaintmentMonth = 'в октябре';   
+                this.state.attaintmentCount = this.state.pageParams.attaintmentArrayCounts[9];
+                break;
+            case 10:  
+                this.state.attaintmentMonth = 'в ноябре';    
+                this.state.attaintmentCount = this.state.pageParams.attaintmentArrayCounts[10];
+                break;
+            case 11:  
+                this.state.attaintmentMonth = 'в декабре';   
+                this.state.attaintmentCount = this.state.pageParams.attaintmentArrayCounts[11];
+                break;
         }
     } 
 
@@ -127,6 +169,7 @@ class Content extends Component {
                 <Advantages />
                 <Attainment
                     month = { this.state.attaintmentMonth }
+                    count = { this.state.attaintmentCount   }
                     title = { this.state.pageParams.attaintmentTitle }
                 />
                 <Workflow

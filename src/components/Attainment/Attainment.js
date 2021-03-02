@@ -7,7 +7,7 @@ import classes from './Attainment.scss'
             <div className={ classes.attainmentContent}>
                 <span className={[classes.attainmentContent__item, classes.attainmentContent__item_month].join(' ')}>{ props.month }</span>
                 <span className={[classes.attainmentContent__item, classes.attainmentContent__item_action].join(' ') +  props.title }></span>
-                <span className={[classes.attainmentContent__item, classes.attainmentContent__item_quantity].join(' ')}><span>37</span>объектов</span>
+                <span className={[classes.attainmentContent__item, classes.attainmentContent__item_quantity].join(' ')}><span>{ props.count }</span>объектов</span>
             </div>
         </div>
     </article>

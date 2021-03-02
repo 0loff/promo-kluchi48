@@ -31,7 +31,7 @@ export default class Figures extends Component {
             expirience: {
                 figures: 0,
                 description: 'Лет работы',
-                steps: 5,
+                steps: 7,
                 stepDelay: 1000
             },
             offices: {
@@ -43,7 +43,7 @@ export default class Figures extends Component {
             expiriencedEmployee: {
                 figures: 0,
                 description: 'Опытных риэлтора',
-                steps: 23,
+                steps: 21,
                 stepDelay: 1000
             },
             lawyers: {
@@ -84,7 +84,6 @@ export default class Figures extends Component {
             <article id="figures" className="container">
                 <h2>Ключи-Недвижимость в цифрах</h2>
                 <div 
-                    // onScroll={ console.log( document.documentElement.clientHeight )} 
                     className={classes.figures}>
 
                     {/* { this.state.keysInFigures.map((item, index) => (
@@ -100,7 +99,7 @@ export default class Figures extends Component {
 
 
                     <div className={classes.figures__item}>
-                        <span>13 400</span>
+                        <span>13 400 м</span>
                         <span>Жилой недвижимости в продаже</span>
                     </div>
                     <div className={classes.figures__item}>
@@ -116,7 +115,7 @@ export default class Figures extends Component {
                         <span>Довольных клиента</span>
                     </div>
                     <div className={classes.figures__item}>
-                        <span>5</span>
+                        <span>7</span>
                         <span>Лет работы</span>
                     </div>
                     <div className={classes.figures__item}>
@@ -124,7 +123,7 @@ export default class Figures extends Component {
                         <span>Оффиса в липецке</span>
                     </div>
                     <div className={classes.figures__item}>
-                        <span>23</span>
+                        <span>21</span>
                         <span>Опытных риэлтора</span>
                     </div>
                     <div className={classes.figures__item}>

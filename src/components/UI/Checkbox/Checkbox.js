@@ -13,7 +13,7 @@ const Checkbox = props => (
             htmlFor="agreement" 
             className={ classes.checkbox__label }            
         >            
-            Согласен на обработку персональных данных
+            Согласен на обработку  <a className={ classes.checkbox__privacyPolicy} href="http://kluchi48.ru/policy" target="_blank" rel="noreferrer">персональных данных</a> 
         </label>
     </div>
 )

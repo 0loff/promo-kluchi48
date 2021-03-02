@@ -4,9 +4,10 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 30px 94px 30px 133px;
+    padding: 30px 94px 30px 120px;
     width: 100%;
     flex-shrink: 0;
+    
     @media screen and (max-width: 1246px) {
         flex-wrap: wrap;
         padding-left: 30px;
@@ -39,7 +40,7 @@
                     top: 0;
                 }
             }
-            @media screen and (max-width: 1071px) {
+            @media screen and (max-width: 1086px) {
                 order: 2;
             }
             @media screen and (max-width: 1384px) {

@@ -33,6 +33,9 @@
             background-size: 85%;
         }
     }
+    &__privacyPolicy {
+        text-decoration: underline;
+    }
 }
 input[type=checkbox]:checked + .checkbox__label:before {
     background-image: url('../../../img/cross.svg');

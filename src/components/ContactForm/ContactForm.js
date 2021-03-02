@@ -154,7 +154,7 @@ class ContactForm extends Component {
                         className={ classes.form_hide }
                         onClick={ this.props.hideContactForm }
                     ></span>
-                    <h2 className={ classes.contactForm__title }>{ this.state.messageStatus}</h2>
+                    <h2 className={ ([classes.contactForm__title, classes.contactForm__title_answer].join(' ')) }>{ this.state.messageStatus}</h2>
                     <p className={ classes.contactForm__answer }>{ this.state.messageAnswer}</p>
                 </div>
             </div>
