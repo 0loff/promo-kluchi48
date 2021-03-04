@@ -33,7 +33,8 @@ const buyingParams = {
     ],
     actionTrait: 'купить',
     contactFormTitle: 'покупку',
-    attaintmentArrayCounts: [28, 32, 29, 27, 33, 29, 34, 28, 33, 31, 26, 24]
+    attaintmentArrayCounts: [28, 32, 29, 27, 33, 29, 34, 28, 33, 31, 26, 24],
+    documentTitle: 'Помощь в покупке недвижимости | ЮРЦ "Ключи-Недвижимость"'
 }
 
 const sellingParams = {
@@ -59,7 +60,8 @@ const sellingParams = {
     ],
     actionTrait: 'продать',
     contactFormTitle: 'продажу',
-    attaintmentArrayCounts: [24, 26, 31, 33, 28, 34, 29, 33, 27, 29, 32, 28]
+    attaintmentArrayCounts: [24, 26, 31, 33, 28, 34, 29, 33, 27, 29, 32, 28],
+    documentTitle: 'Продать недвижимость | ЮРЦ "Ключи-Недвижимость"'
 }
 
 class Content extends Component {
@@ -78,7 +80,7 @@ class Content extends Component {
         this.props.location.pathname === '/buying'
             ? this.state.pageParams = buyingParams
             : this.state.pageParams = sellingParams
-
+            
         switch (new Date().getMonth() - 1) {
             case -1:  
                 this.state.attaintmentMonth = 'в декабре';   
@@ -136,6 +138,9 @@ class Content extends Component {
     } 
 
     componentDidMount() {
+
+        document.title = this.state.pageParams.documentTitle
+
         window.onscroll = () => {
             let heightFromTop = document.documentElement.scrollTop
             if (heightFromTop > 690 && this.state.isScrollToTopVisible === false) {
