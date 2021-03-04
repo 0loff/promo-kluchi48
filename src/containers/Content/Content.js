@@ -72,6 +72,7 @@ class Content extends Component {
             pageParams: {},
             attaintmentMonth: '',
             attaintmentCount: '',
+            attaintmentWord: '',
             isScrollToTopVisible: false,
             isContactFormVisible: false,
             buttonLabelCall: 'Позвонить',
@@ -135,6 +136,19 @@ class Content extends Component {
                 this.state.attaintmentCount = this.state.pageParams.attaintmentArrayCounts[11];
                 break;
         }
+
+        const attaintmentWords = ['объект', 'объекта', 'объектов']
+        const attaintmentNum = this.state.attaintmentCount % 10
+
+        if (attaintmentNum > 10 && attaintmentNum < 20) {
+            this.state.attaintmentWord = attaintmentWords[2]
+        } else if (attaintmentNum > 1 && attaintmentNum < 5) {
+            this.state.attaintmentWord = attaintmentWords[1]
+        } else if (attaintmentNum == 1) {
+            this.state.attaintmentWord = attaintmentWords[0]
+        } else {
+            this.state.attaintmentWord = attaintmentWords[2]
+        }
     } 
 
     componentDidMount() {
@@ -176,6 +190,7 @@ class Content extends Component {
                     month = { this.state.attaintmentMonth }
                     count = { this.state.attaintmentCount   }
                     title = { this.state.pageParams.attaintmentTitle }
+                    word = { this.state.attaintmentWord }
                 />
                 <Workflow
                     workFlowList = { this.state.pageParams.workFlow }
