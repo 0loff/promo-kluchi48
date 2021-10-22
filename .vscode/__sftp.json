@@ -1,0 +1,16 @@
+{
+    "name": "promo-kluchi48.ru",
+    "host": "promo-kluchi48.ru",
+    "protocol": "ftp",
+    "port": 21,
+    "username": "u1303795_dolev",
+    "password": "7Z5d1P4n",
+    "context": "build/",
+    "remotePath": "/www/promo-kluchi48.ru/",
+    "uploadOnSave": true,
+    "watcher": {
+        "files": "**/*",
+        "autoUpload": true,
+        "autoDelete": true
+    }
+}

@@ -6,4 +6,7 @@
   RewriteCond %{REQUEST_FILENAME} !-d
   RewriteCond %{REQUEST_FILENAME} !-l
   RewriteRule . /index.html [L]
+  RewriteCond %{HTTP_HOST} ^(www\.)?ms\.kluchi-nedvizhimost48\.ru$ [NC]
+  RewriteCond %{REQUEST_URI} !^/ms/
+  RewriteRule ^(.*)$ ms/$1 [L]
 </IfModule>
